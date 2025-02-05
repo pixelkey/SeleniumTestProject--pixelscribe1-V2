@@ -1,0 +1,168 @@
+{
+    "variables": [
+        {
+            "name": "navigateToUrl",
+            "value": "https://pixelscribe.localhost/"
+        },
+        {
+            "name": "email",
+            "value": "support@pixelkey.com"
+        },
+        {
+            "name": "password",
+            "value": "l9!Ni@R!6eeTT$jw"
+        },
+        {
+            "name": "roomName",
+            "value": "Test Room 1"
+        }
+    ],
+    "steps": [
+        {
+            "action": "maximizeWindow",
+            "pageName": "loginPage"
+        },
+        {
+            "action": "navigateToUrl",
+            "pageName": "loginPage",
+            "url": "navigateToUrl"
+        },
+        {
+            "action": "login",
+            "email": "email",
+            "password": "password"
+        },
+        {
+            "action": "get",
+            "pageName": "loginPage",
+            "name": "emailTextbox",
+            "locator": {
+                "type": "xpath",
+                "value": "//input[@id='login-email' and @name='email']"
+            },
+            "value": "email"
+        },
+        {
+            "action": "get",
+            "pageName": "loginPage",
+            "name": "passwordTextbox",
+            "locator": {
+                "type": "xpath",
+                "value": "//input[@id='login-password' and @name='password']"
+            }
+        },
+        {
+            "action": "get",
+            "pageName": "loginPage",
+            "name": "loginButton",
+            "locator": {
+                "type": "xpath",
+                "value": "//button[@id='quickstart-sign-in' and @name='signin']"
+            }
+        },
+        {
+            "action": "get",
+            "pageName": "loginPage",
+            "name": "loginWithEmailPassword",
+            "locator": {
+                "type": "xpath",
+                "value": "//*[@id='auth']/div/div[2]/label"
+            }
+        },
+        {
+            "action": "type",
+            "pageName": "roomsPage",
+            "name": "roomTitle",
+            "locator": {
+                "type": "xpath",
+                "value": "//a[contains(@href,'rooms')]"
+            }
+        },
+        {
+            "action": "typeRoomName",
+            "pageName": "roomsPage",
+            "name": "newRoomNameTextbox",
+            "locator": {
+                "type": "xpath",
+                "value": "//input[@id ='create-room-name' and @name = 'create-room-name']"
+            },
+            "value": "roomName"
+        },
+        {
+            "action": "wait",
+            "duration": 2000
+        },
+        {
+            "action": "clickCreateRoomButton",
+            "pageName": "roomsPage",
+            "name": "createRoomButton",
+            "locator": {
+                "type": "xpath",
+                "value": "//button[@id ='create-room-btn' and @name = 'New Room']"
+            }
+        },
+        {
+            "action": "createdNewRoom",
+            "pageName": "roomsPage",
+            "name": "createdNewRoom",
+            "locator": {
+                "type": "xpath",
+                "value": "//input[@value='Test Room 1']"
+            }
+        },
+        {
+            "action": "clickDeleteRoomButton",
+            "pageName": "roomsPage",
+            "name": "deleteRoomButton",
+            "locator": {
+                "type": "xpath",
+                "value": "//input[@value='Test Room 1']/../../div[4]"
+            }
+        },
+        {
+            "action": "clickRoomUndoButton",
+            "pageName": "roomsPage",
+            "name": "roomUndoButton",
+            "locator": {
+                "type": "xpath",
+                "value": "//*[@id='undo-btn']"
+            }
+        },
+        {
+            "action": "clickRoomRedoButton",
+            "pageName": "roomsPage",
+            "name": "roomRedoButton",
+            "locator": {
+                "type": "xpath",
+                "value": "//*[@id='redo-btn']"
+            }
+        },
+        {
+            "action": "clickFirstRoomInRoomList",
+            "pageName": "roomsPage",
+            "name": "firstRoomInRoomList",
+            "locator": {
+                "type": "xpath",
+                "value": "(//*[contains(@class, 'edit-room-name')])[1]"
+            }
+        },
+        {
+            "action": "clickSecondRoomInRoomList",
+            "pageName": "roomsPage",
+            "name": "secondRoomInRoomList",
+            "locator": {
+                "type": "xpath",
+                "value": "(//*[contains(@class, 'edit-room-name')])[2]"
+            }
+        },
+        {
+            "action": "clickStartRoomButton",
+            "pageName": "roomsPage",
+            "name": "startRoomButton",
+            "locator": {
+                "type": "xpath",
+                "value": "//input[@value='Test Room 1']/../../div[1]"
+            }
+        }
+    ]
+}

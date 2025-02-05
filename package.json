@@ -1,0 +1,22 @@
+{
+  "name": "seleniumtestproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+     "test": "mocha --reporter mochawesome --reporter-options reportDir=reports,reportFilename=report"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^130.0.1",
+    "selenium-webdriver": "^4.25.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.2",
+    "mocha": "^10.8.2",
+    "mochawesome": "^7.1.3",
+    "mochawesome-add-context": "^2.0.0"
+  }
+}
